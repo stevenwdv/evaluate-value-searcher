@@ -11,9 +11,7 @@
 	},
 	"dependencies": {
 		"iter-tools-es": "^7.4.0",
-		"lz4": "^0.6.5",
 		"sanitize-filename": "^1.6.3",
-		"tar": "^6.1.11",
 		"value-searcher": "file:value-searcher"
 	},
 	"devDependencies": {
@@ -28,6 +26,8 @@
 		"typescript": "^4.8.2"
 	},
 	"optionalDependencies": {
-		"@swc/core": "^1.2.246"
+		"@swc/core": "^1.2.246",
+		"lz4": "^0.6.5",
+		"tar": "^6.1.11"
 	}
 }

@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import sanitizeFilename from 'sanitize-filename';
 import ValueSearcher, {transformers} from 'value-searcher';
+
 import {RequestData} from './collectTypes';
 import {notFalsy, raceWithCondition} from './utils';
 import {getKnownLeaks, mapLeakType} from './common';
