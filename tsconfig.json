@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["ESNext"],
+		// Type checking
+		"strict": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"exactOptionalPropertyTypes": true,
+		"noUncheckedIndexedAccess": true,
+		// Output
+		"noEmit": true,
+		"outDir": "ts-out",
+		"sourceMap": true,
+		// CLI
+		"pretty": true
+	},
+	"include": [
+		"./src/**/*.ts",
+		"./src/**/*.d.ts"
+	],
+	"ts-node": {
+		//"swc": true  // Enable to disable type checking and speed up transpiling
+	}
+}

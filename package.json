@@ -1,0 +1,33 @@
+{
+	"name": "evaluate-value-searcher",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"lint": "tsc --noEmit --emitDeclarationOnly false && eslint --max-warnings 0 .",
+		"check-known-leaks": "ts-node ./src/checkKnownLeaks.ts",
+		"check-all-requests": "ts-node ./src/checkAllRequests.ts",
+		"benchmark": "ts-node ./src/benchmark.ts",
+		"pickle-to-json": "python3 ./pickle_to_json.py"
+	},
+	"dependencies": {
+		"iter-tools-es": "^7.4.0",
+		"lz4": "^0.6.5",
+		"sanitize-filename": "^1.6.3",
+		"tar": "^6.1.11",
+		"value-searcher": "file:value-searcher"
+	},
+	"devDependencies": {
+		"@types/lz4": "^0.6.0",
+		"@types/node": "^18.7.14",
+		"@types/tar": "^6.1.2",
+		"@typescript-eslint/eslint-plugin": "^5.36.1",
+		"@typescript-eslint/parser": "^5.36.1",
+		"eslint": "^8.22.0",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.8.2"
+	},
+	"optionalDependencies": {
+		"@swc/core": "^1.2.246"
+	}
+}
