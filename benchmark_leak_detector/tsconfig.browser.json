@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": [
+			"ESNext"
+		],
+		"allowJs": true,
+		// Output
+		"outFile": "./out/bundle.js",
+		"sourceMap": true,
+		// CLI
+		"pretty": true
+	},
+	"include": [
+		"./src/benchmark_leak_detector_browser.js"
+	]
+}

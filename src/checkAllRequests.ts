@@ -7,7 +7,7 @@ import {PassThrough, Readable} from 'node:stream';
 import consumers from 'node:stream/consumers';
 import {pipeline} from 'node:stream/promises';
 
-import {asyncBuffer, asyncFilter, asyncFlatMap, asyncToArray, filter, notNil, pipe} from 'iter-tools-es';
+import {asyncFilter, asyncFlatMap, asyncToArray, execPipe, filter, notNil} from 'iter-tools-es';
 import lz4 from 'lz4';
 import sanitizeFilename from 'sanitize-filename';
 import tar from 'tar';
@@ -56,7 +56,6 @@ async function main() {
 
 	const maxDropSearchCharsEnd          = 2;
 	const searchPoorlyDelimitedSubstring = false;
-	const requestSearchConcurrencyLimit  = 10;
 
 	const encodeLayers = 1;
 	const encoders     = [
@@ -111,7 +110,8 @@ async function main() {
 					searcher.addValue(searchValue.subarray(0, searchValue.length - i), encodeLayers, encoders,
 						  !searchPoorlyDelimitedSubstring)));
 
-		const foundLeaks = await pipe(
+		const foundLeaks = await execPipe(
+			  collectResult.data.requests ?? [],
 			  filter((req: RequestData) => !req.url.startsWith('blob:')),
 			  asyncFlatMap(req => [
 				  searcher.findValueIn(Buffer.from(req.url), decodeLayers, decoders)
@@ -134,10 +134,9 @@ async function main() {
 							encodings,
 						} as const) : null,
 			  ]),
-			  asyncBuffer(requestSearchConcurrencyLimit),
 			  asyncFilter(notNil),
 			  asyncToArray,
-		)(collectResult.data.requests ?? []);
+		);
 
 		const thisLeaksMissed = (urlLeaks ?? []).filter(leak =>
 			  !foundLeaks.some(foundLeak =>

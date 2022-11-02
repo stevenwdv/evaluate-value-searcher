@@ -1,11 +1,21 @@
-Prepare:
+**See `./results.md` for evaluation results.**
+
+Clone repository including submodules:
+
+```shell
+git clone --recurse-submodules https://github.com/stevenwdv/evaluate-value-searcher.git
+```
+
+## Check how many known leaks value-searcher finds
+
+Convert leaks.pkl to JSON:
 
 ```shell
 # Optional venv
 python3 -m venv --upgrade-deps ./venv/
 . ./venv/bin/activate  # . ./venv/Scripts/activate for Windows
 
-pip3 install --requirement requirements.txt
+pip3 install --requirement ./requirements.txt
 npm run pickle-to-json path/to/leaks.pkl
 ```
 
@@ -20,3 +30,14 @@ Check also if value-searcher can find extra leaks in the requests from `./jsons.
 ```shell
 npm run check-all-requests
 ```
+
+## Run speed benchmarks
+
+Requires PowerShell Core
+
+```shell
+./benchmark_leak_detector_py/setup_venv.sh
+./RunBenchmark.ps1
+```
+
+Now open `./benchmark_leak_detector/browser_tests.html` to run LeakDetector.js browser speed benchmark.

@@ -1,5 +1,6 @@
 node_modules/
-/venv/
+venv/
 /leaks.json.gz
 /jsons.tar.lz4
 /out*/
+v8logs/

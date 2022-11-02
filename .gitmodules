@@ -1,3 +1,6 @@
 [submodule "value-searcher"]
 	path = value-searcher
 	url = https://github.com/stevenwdv/value-searcher
+[submodule "benchmark_leak_detector/leak-inspector"]
+	path = benchmark_leak_detector/leak-inspector
+	url = https://github.com/leaky-forms/leak-inspector
