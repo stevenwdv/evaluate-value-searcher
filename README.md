@@ -1,9 +1,15 @@
-**See `./results.md` for evaluation results.**
+**See [`./RESULTS.md`](./RESULTS.md) for evaluation results.**
 
 Clone repository including submodules:
 
 ```shell
 git clone --recurse-submodules https://github.com/stevenwdv/evaluate-value-searcher.git
+```
+
+Install dependencies:
+
+```shell
+npm install
 ```
 
 ## Check how many known leaks value-searcher finds
@@ -31,7 +37,7 @@ Check also if value-searcher can find extra leaks in the requests from `./jsons.
 npm run check-all-requests
 ```
 
-## Run speed benchmarks
+## Run comparison
 
 Requires PowerShell Core
 
