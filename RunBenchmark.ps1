@@ -19,6 +19,9 @@ if (Test-Path ./benchmark_leak_detector_py/venv/)
     }
 }
 
+&$python --version
+node --version
+
 $cases = @(
 @{ needle = 'info@example.com'; haystack = '{"email": "info@example.com"}' }
 @{ needle = 'hello'; haystack = '68656c6c6f' }

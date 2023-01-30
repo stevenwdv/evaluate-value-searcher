@@ -9,25 +9,27 @@
 		"benchmark": "ts-node ./src/benchmark.ts",
 		"pickle-to-json": "python3 ./pickle_to_json.py"
 	},
+	"workspaces": [
+		"./value-searcher/"
+	],
 	"dependencies": {
-		"iter-tools-es": "^7.4.0",
-		"sanitize-filename": "^1.6.3",
-		"value-searcher": "file:value-searcher"
+		"iter-tools-es": "^7.5.1",
+		"sanitize-filename": "^1.6.3"
 	},
 	"devDependencies": {
 		"@types/lz4": "^0.6.0",
-		"@types/node": "^18.7.14",
-		"@types/tar": "^6.1.2",
-		"@typescript-eslint/eslint-plugin": "^5.36.1",
-		"@typescript-eslint/parser": "^5.36.1",
-		"eslint": "^8.22.0",
+		"@types/node": "^18.11.18",
+		"@types/tar": "^6.1.3",
+		"@typescript-eslint/eslint-plugin": "^5.49.0",
+		"@typescript-eslint/parser": "^5.49.0",
+		"eslint": "^8.33.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"ts-node": "^10.9.1",
-		"typescript": "^4.8.2"
+		"typescript": "^4.9.4"
 	},
 	"optionalDependencies": {
-		"@swc/core": "^1.2.246",
+		"@swc/core": "^1.3.30",
 		"lz4": "^0.6.5",
-		"tar": "^6.1.11"
+		"tar": "^6.1.13"
 	}
 }

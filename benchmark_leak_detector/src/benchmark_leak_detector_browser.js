@@ -13,6 +13,8 @@
 ///<reference path="./fix_leak_detector.js"/>
 
 function start(cases) {
+	console.log(navigator.userAgent);
+
 	for (const [needle, haystack] of cases) {
 		console.log(needle, haystack.substring(0, 60));
 
@@ -37,4 +39,5 @@ function start(cases) {
 		console.log((end - start) / i);
 		console.log();
 	}
+	console.info('DONE');
 }
